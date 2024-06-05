@@ -1,0 +1,40 @@
+1- How to Think about components , Composition,
+ Reusability , How to split a component , building layouts , passing element instead of children prop
+
+2- key prop in rendring lists
+
+===========> text extender
+
+
+3- effects , data fetching , race conditions in fetching data , multiple requests,
+useEffect , clean up functions , dependency arrays , abortController ,
+ try-catch-finally , handling errors 
+
+4-how to creat usestates conditionally , localStorage , useState's callback function
+
+5- how to select dom element in react , useRef , how to name custome hooks , custome hooks ,
+ useLocalStorageState(an example for custome hooks) 
+
+
+================> currecy changer
+
+
+===================>classy weather
+
+
+=========>>>make rating star======>>And Then ========> usePopcorn --movie rating app
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

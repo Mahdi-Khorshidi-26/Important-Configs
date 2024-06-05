@@ -1,0 +1,35 @@
+-createBrowserRouter {Creating RootLayout and children for routing and errorElement for Errors {error element bubble up}} {index: true} 
+-RouterProvider
+-absolute routing and relative routing 
+-Link
+-NavLink {end property for it} {relative: {path,route,...}} 
+-OutLet
+-const navigate = useNavigate() { navigate(..) }
+-const params = useParams() { dinamic routing with :key }
+-loader functions {const data = useLoaderData() || useRouterLoaderData() {when we give and id to the path we pass it to this}} {loader({reqeuest , params})}
+ {where we have access to this data ? it self and lower levels that got called in it}
+-action functions and Form components {request.formData().get('name property in inputs')} {redirect()}
+-const navigation = useNavigation() { using for loading with state property}
+-const routerError = useRouterError()
+-json function for returning in loaders and action mostly used to show and get a custome error {json({message:""},{states:""})}
+-when using Forms in react router dont forget to add name property which can help us to get them later 
+-const submit = useSubmit({},{method:""})
+-const action = useActionData()
+-const fetcher = useFetcher()
+-defer({})
+-Suspense {fallback={}} and Await Componenets {resolve={the data from useloaderdata}}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

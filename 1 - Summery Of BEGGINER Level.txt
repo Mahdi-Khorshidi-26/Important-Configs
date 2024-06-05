@@ -1,0 +1,85 @@
+1- Why do we need react.js at all ?
+
+2- How react works ? 
+
+3- How to creat a react template ? vite
+
+4- React dev tools ?
+
+=========> creat a live clock .
+
+5- vit VS creat-react-app ?
+
+6-(Optional ) => 
+review of javascript for react 
+: (Destructuring Objects and Arrays ,
+ RestSpread Operator,
+Template Literals , Ternaries Instead of ifelse Statements ,
+Functions , Short-Circuiting And Logical Operators ,Optional Chaining ,
+The Array Methods ,Working With Immutable Arrays , 
+Asynchronous JavaScript Promises ,Asynchronous JavaScript AsyncAwait )
+
+
+7-core concepts : run react on strick mode , components , props , jsx , childeren as props ,
+creating and reusing components , rendering lists , condional rendering , fragments ,propType
+
+=====> fast react pizza co.
+  
+8- how to style components :: what are the ways ?
+
+9 - hadeling events and states to update ui (Just useState ) ,building forms in react way ,
+controlled elements , how to declare an event on an element , setting imutable obj and arr in react,
+
+==========> create step information
+
+=========> date counter 
+
+10- e.preventDefault 
+
+=======> creating far away
+
+
+=======> create flash card 
+
+
+=======> date Counter V2
+
+11 - passing state and state setter as props , Derived state and hosting
+
+12- export defualt and named exports , separation of Components
+
+
+====== > Accordian Card 
+
+
+=======> tip Calculator
+
+========> Eat-N-Split Project final project of beginner level
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,8 @@
+- what are the advantages to use context api 
+- in a folder called store usually create your file and name it what ever you want 
+- export nameofthecontext with a captalized letter then we go to the file that we have all the components loaded 
+- then we import that and wrappe all the components that use the state with a <nameofthecontext.Provider></nameofthecontext.provider>
+- then it has a value that we should pass all the values that we have pass in there to work and then autocompletion will work too 
+- we can now pass our values in the value of <nameofthecontext.Provider   value={}></nameofthecontext.provider>
+- to provide and have accsses all the properties we can import the context that we created and import useContext then
+pass the context to useContext and now we have access to all the properties that have been created so far anywhere we want 

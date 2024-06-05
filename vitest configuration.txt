@@ -1,0 +1,35 @@
+1- npm i -D vitest
+
+2-package.json ==> scripts==> add a script like below :
+"test": "vitest --environment jsdom",
+
+3-package.json ==> scripts==> add a script like below :
+"test:ui": "vitest --ui --environment jsdom"
+
+4- when we run the test above it asks us to install the vitest:ui library
+
+5- npm i @testing-library/react
+
+6- npm i jsdom
+
+7- now it's time to say our vitest to use jsdom by some configuration
+in the root folder create a file called vitest.config.jsx
+
+these lines of codes should be in there : 
+/* eslint-disable react-refresh/only-export-components */
+import defineConfig from "vitest/config";
+
+export default defineConfig({
+  test: {
+    globals: true,
+    environment: "jsdom",
+  },
+});
+
+then restart the vitest to set the configuration;
+
+
+8- the last library that we need to be installed :
+npm i @testing-library/jest-dom
+
+

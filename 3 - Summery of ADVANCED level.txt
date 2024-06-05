@@ -1,0 +1,4 @@
+
+1- useReducer , useReducerPattern {questions:[] , status : ready,erro,loading},React Router new Version ,
+performance optimazation and advanced useEffect 
+Redux and redux toolkit
