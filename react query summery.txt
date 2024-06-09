@@ -1,0 +1,83 @@
+1- what is react query and why we need it ?
+
+2- installing ==> npm i @tanstack/react-query --save-dev
+
+3- this is typical to create a file called http.jsx and 
+lower all the functions related to api requests in there 
+and also we need to have ClientQueryProvider and ClientQuery 
+imported which i highly recommend that to import ClientQuery 
+in your http file then you can have accsess to it any where 
+
+4- the first usage of clientquery is to pass it as a props to 
+ClientQueryProvider
+
+5- for getting the data we can use useQuery and 
+it's properties like below:
+
+const {data , isPending ,isLoading,isError , error , ...} = useQuery({
+	queryKey : ['events'],
+	queryFn: the functions that we created in http file like this
+	({signal})=>fetchData({signal}),
+	staleTime:1000 (default),
+	gcTime :3000,
+	enable:true (default) for sending the request we can mannual this,
+	
+	})
+
+the signal property is actully fixed and it's 
+given by react query its self and the usage is for aborting the request 
+
+6- also to mention we need to create queryClient like this 
+const queryClient = new QueryClient();
+
+7- another hook we have is useMutaion which works like below and it's
+used to change the data or for POST requests:
+
+const {mutate ,data , isPending ,isLoading,isError , error , ... } = useMutaion({
+	mutaionFn:the functions that we created in http file like this,
+	onSuccess:()=>{
+	queryClient.invalidateQueries({queryKey:[what-data ? for example 'events'] ,
+	exact : true/false for saying the exact queries with that key should be triggred again or false
+	to say all of them that have the key in them,
+	refetchType:'none' to say to react-query to change those that actully has been changed });//tells react-query that the data is stale and it needs to get updated;
+	navigate('..') //by react router
+	},
+	
+})
+
+mutate is a function where you call it it gets the arguments that
+your mutaionFunction needs and it gets started there;
+
+8- that's how all these things work but there is just one other thing that for optimisied and optimistic
+updating it's better to act like below :
+
+
+const {mutate ,data , isPending ,isLoading,isError , error , ... } = useMutaion({
+	mutaionFn:the functions that we created in http file like this,
+	onMutate: async ({data})=>{
+		const newEvent = data.event
+		await queryClient.cancelQueries({queryKey:["events",params.id]})
+		const previousEvent = queryClient.getQueryData(["events",params.id])
+		queryClient.setQueryData(["events",params.id] ,newEvent );
+		return {previousEvent};	// which is the context in onError
+	},
+	onError:(error,data,context)=>{
+		queryClient.setQueryData(["events",params.id] ,context.previousEvent);
+	}
+	onSetteled:()=>{
+		queryClient.invalidateQueries(['events',params.id]);
+	}
+})
+
+9- at last one of the hooks might be useful is useIsFetching();
+which will help us to have a loading anywhere we want like to say if there is 
+something going on any where in the application you can call it like this:
+
+const fetching = useIsFetching();
+ 
+ when ever fetching>0 there is something going on
+ other wise is not ;
+
+
+
+
