@@ -1,0 +1,40 @@
+this is how fetching works for get requests and posts
+
+
+GET : 
+
+export async function fetchEvents({signal}) {
+const response = await fetch('http://localhost:3000/events',{signal});
+if ( ! response. ok) {
+const error = new Error('An error occurred while fetching the events ')
+error.code = response.status;
+error.info = await response.json()
+}
+
+const {events} = await response.json();
+
+return events;
+
+}
+
+
+export async function fetchEventsForUPDATE ({signal,event}) {
+const response = await fetch('http://localhost:3000/events/${id}',{
+    signal,
+    method :"POST:toAdd && /PATCH/PUT toEDIT",
+    body:JSON.stringify({event}),
+    headers:{
+        'Content-Type':'application/json'
+    }
+});
+if ( ! response. ok) {
+const error = new Error('An error occurred while fetching the events ')
+error.code = response.status;
+error.info = await response.json()
+}
+
+const {events} = await response.json();
+
+return events;
+
+}
