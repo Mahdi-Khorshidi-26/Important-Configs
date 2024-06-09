@@ -1,0 +1,37 @@
+0- installation : npm i react-redux @reduxjs/toolkit
+
+1- the first thing is how to use it with creating store and 
+passing it to Provider Component that wraps everything 
+
+1/5 - createSlice({
+    name:"",
+    initialState:{},
+    reducers:{
+        functionName(state,action){
+            in here we can use mutation because redux uses IMMER in the background
+        }
+    }
+})
+
+2- then we have createConfig which we can pass our Slices to it and then we should return that 
+as the store and returning all the slices Actions as well
+
+3-also we can use custom actions for creating and using them for thunks :
+
+const name =() => {
+    return async (dispatch)=>{
+         const nameFetching = async ()=>{
+            do the fetching and return the data how ever you like ;
+         }   
+
+    try{
+        const data = await nameFetching()
+        dispatch(do the data setting)
+    }catch(err){
+        dispatch(do the error Handling)    
+    }finally{
+        // gets done anyway
+    }
+
+    }
+}
