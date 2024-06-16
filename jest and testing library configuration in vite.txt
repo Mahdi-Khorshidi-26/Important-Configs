@@ -1,0 +1,46 @@
+1-create a project ==> npm create vite@latest nameOFTheProject 
+
+a faster way would be : 
+
+npm create vite@Latest . -- --template react 
+or for typescript
+npm create vite@latest . -- --template react-ts
+
+2- installing jest ==> npm i jest -D
+
+3- the script that we need for jest testing in package.json is 'test':'jest'
+
+4- the files names should be like Component'sName.test.[jsx/js/ts/tsx]
+
+5- the next step is the installation for bable : 
+
+npm i -D @babel/preset-env @babel/preset-react
+
+6- then we need a file to configure the babel 
+then creating a file named babel.config.json in the root directory 
+
+{
+"presets":['@babel/preset-env','@babel/preset-react']
+
+} 
+
+
+7- after the configuraion when we run the test it's going to have some problem with the svg files and etc.
+so we create a folder called test and in there we create a file called fileMock.jsx and write these
+lines of codes in there  :
+ 
+export default {
+  __esModule: true,
+  default: "test-file-stub",
+};
+
+8- then we need to create a test.config.json and fill it with : 
+
+{
+  "moduleNameMapper": {
+    "\\.(gif|ttf|eot|svg|png)$": "<rootDir>/src/test/fileMock.jsx",
+    "\\.(css|less)$": "<rootDir>/src/test/fileMock.jsx"
+  }
+}
+
+

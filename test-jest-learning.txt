@@ -1,0 +1,54 @@
+1- for testing porpuses we need to have to create our apps with create-react-app 
+which has all the dependencies installed on it and it can stop us from searching for 
+the configuration part in vite but will cover that after all the explanation at the end of this file : 
+
+2- every test has three steps Called threaple "A":
+
+A : Arrange
+
+A : Act
+
+A : Asserion
+
+3- we need to import somefiles for every test that are : 
+import { render, screen } from '@testing-library/react';
+import user from '@testing-library/user-event'
+import Form from './Form'; // this can be the acuall component that we want to write the test on 
+test("this is to see that is we have two inputs and a button in the document", () => {
+  //Arrange
+  render(<Form />);
+  //Act
+  const inputs = screen.getAllByRole("textbox");
+  const button = screen.getByRole("button");
+  //Assertion
+  expect(inputs).toHaveLength(2);
+  expect(button).toBeInTheDocument();
+});
+
+
+4- 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
