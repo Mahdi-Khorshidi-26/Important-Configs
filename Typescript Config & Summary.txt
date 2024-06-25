@@ -1,0 +1,139 @@
+1- first we shoul know that why we need typescript 
+& what are the advantages of if ;
+
+2- we can install it in some ways :
+npm i -g typescript : to install it globally in your system
+npm i typescript : to install it locally in your project
+npx tsc File'sName.ts to use directly on a file for 
+compiling ;
+
+3- there are two ways of how we can indicate a variable's 
+name : implisit and inference which typescript will deside 
+what type to assing to it's value and implisit is for us :
+let name='mahdi'; inference
+let name:string = 'mahdi'; implisit
+
+
+
+4-all types and ways to assign them :
+string 
+number
+object
+boolean
+string | number
+number & string
+string[]
+'mahdi'|'ali'|'omid' : this happens when we do not want any other data to be accepted 
+{name:string,age:number,isAdmin:boolean,id:string|number}
+function type :: (a:number,b:string...)=>returnType
+
+
+5- how to build custom type : 
+
+type addFunctionType = (a:number,b:string...)=>number
+
+
+interface addFunctionType{
+   password : number & string,
+   name:string,
+   familyMembersName:string[]	
+}
+
+the difference is that acully if you want to make a library 
+and want your project to be more flexiable so anyone 
+woring on the library can add more types can we use interfaces 
+otherwise it's mostly personal preference ;
+
+for exmple you can make interfaces as a contract for
+their classes so they can implement them ;
+
+Class person implement addFunctionType{
+   password : number & string,
+   name:string,
+   familyMembersName:string[]
+}
+
+we can combile or use either type with type with
+the keywords of & or |
+
+in interfaces we can create a new interface and 
+extend as many as we can :
+
+interface mines{
+home:string	
+}
+
+interface combination extends addFunctionType,minus{
+//additional properties 
+}
+if we keep it empty we'll see that we are able to pass
+combination to a value for their type ;
+
+
+7- also we can declare that what a function might
+return like below :
+void : means noting to be returned
+funcation handleUser(name:string,age:number):allAbovetypes{
+	const resut:string = `${name} is ${age} years old`   
+	return result
+}
+
+in this perticular case the return type of the function
+would be string ;
+
+
+8- Generic Types : all the above 
+types can be instead of string even the custome types
+that we can create 
+Array<addFunctionType>
+Array<string>
+
+
+we can create more custome Generic types like below:
+
+type DataStorage<T,...>={
+	storage:T[],
+	name:T,
+	add:(data:T)=>void
+}
+
+usage: 
+const textStorage :DataStorage<string>={
+	storage:[],
+	name:"mahdi",
+	add(data){
+	this.storage.push(data)
+}
+}
+
+9- also we can create function with Generic types as well :
+
+function merge<T,U>(a:T,b:U){
+
+	return{
+	...a,
+	...b
+};
+}
+
+
+usage : 
+
+const user = merge<{name:string},{age:number}>({name:"Mahdi"},{age:27})
+
+
+
+9- now it is the time to connect the typescript to react.js
+
+
+
+
+
+
+
+
+
+
+
+
+
